@@ -1,0 +1,40 @@
+{% extends "AppCoder/plantilla.html" %}
+
+{% load static %}
+
+#----------- HEADER -----------
+{% block tituloheader %}
+
+Control Stock 24/07
+
+{% endblock %}
+
+{% block subtituloheader %}
+
+Comidas
+
+{% endblock %}
+
+{% block tituloSecundario %}
+
+Ingrese Stock
+
+{% endblock %}
+
+{% block textoSecundario %}
+
+    <form action="" method="POST"> {% csrf_token %}
+
+        <table>
+
+
+            {{form3.as_p}}
+
+
+        </table>
+
+        <input type="submit" value="Confirmar">
+
+    </form>
+
+{% endblock %}

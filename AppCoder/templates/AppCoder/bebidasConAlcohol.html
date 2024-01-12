@@ -1,0 +1,41 @@
+{% extends "AppCoder/plantilla.html" %}
+
+{% load static %}
+
+#----------- HEADER -----------
+{% block tituloheader %}
+
+Tienda virtual 24 Horas
+
+{% endblock %}
+
+{% block subtituloheader %}
+
+Bebidas Con Alcohol
+
+{% endblock %}
+
+{% block tituloSecundario %}
+
+Ingrese Stock
+
+{% endblock %}
+
+{% block textoSecundario %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+    <table>
+
+
+        {{form1.as_p}}
+
+
+    </table>
+
+    <input type="submit" value="Confirmar">
+
+</form>
+
+
+{% endblock %}

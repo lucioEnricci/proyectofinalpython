@@ -1,0 +1,74 @@
+{% extends "AppCoder/plantilla.html" %}
+
+{% load static %}
+
+#----------- HEADER -----------
+{% block tituloheader %}
+
+Control stock 24/7
+
+{% endblock %}
+
+{% block subtituloheader %}
+
+Bienvenido
+
+{% endblock %}
+
+#----------- BODY -----------
+
+
+{% block sectionInicio %}
+<div class="container">
+    <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'AppCoder/assets/img/intro.jpg' %}"
+            alt="..." />
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+            <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">
+
+                    Para tener un mayor control de Stock de tu negocio!
+
+                </span>
+                <span class="section-heading-lower">
+
+                    Simple y Rapido
+
+                </span>
+            </h2>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %} 
+
+
+
+{% block tituloSecundario %}
+
+Buscar producto
+
+{% endblock %}
+
+{% block textoSecundario %}
+
+ingresa el nombre del producto que deseas buscar
+
+<form action="/AppCoder/resultados/" method="GET">
+
+    <input type="text" name="nombre" id="nombre">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+<p>Estamos buscando la bebida: {{bebida}}</p>
+
+{% for producto in productos %}
+
+    <p> Nombre: {{producto.nombre}} --- Marca: {{producto.marca}} </p>
+
+{% endfor %}
+
+{% endblock %}
